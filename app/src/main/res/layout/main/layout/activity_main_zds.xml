@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.zhufaner.zhudashi.module.main.MainActivity">
+    <include layout="@layout/toolbar_zds"></include>
+<android.support.v4.view.ViewPager
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    android:layout_weight="1"
+    android:id="@+id/main_viewpager">
+
+</android.support.v4.view.ViewPager>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/french_grey"/>
+    <me.majiajie.pagerbottomtabstrip.PageNavigationView
+        android:id="@+id/main_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_53"
+        android:background="#ffffff"
+        />
+</LinearLayout>
