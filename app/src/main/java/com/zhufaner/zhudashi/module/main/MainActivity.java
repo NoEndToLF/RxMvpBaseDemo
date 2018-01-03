@@ -10,8 +10,8 @@ import com.zhufaner.zhudashi.base.view.BaseActivity;
 import com.zhufaner.zhudashi.module.main.home.view.HomeFragment;
 import com.zhufaner.zhudashi.module.main.mine.view.MineFragment;
 import com.zhufaner.zhudashi.module.main.worksite.view.WorkSiteFragment;
-import com.zhufaner.zhudashi.module.main.zany_main.MainPagerAadapter;
-import com.zhufaner.zhudashi.module.main.zany_main.TabItem;
+import com.zhufaner.zhudashi.module.main.adapter.MainPagerAadapter;
+import com.zhufaner.zhudashi.widget.TabItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,9 +57,7 @@ public class MainActivity extends BaseActivity {
     }
     private TabItem newItem(@DrawableRes int unSelectImg, @DrawableRes int SelectImg){
         TabItem tabItem = new TabItem(this);
-        if (unSelectImg!=mIconUnselectIds[0]){
             tabItem.setHasMessage(false);
-        }
         tabItem.initialize(unSelectImg,SelectImg);
         return tabItem;
     }
@@ -70,6 +68,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected boolean isHasToolbar() {
-        return true;
+        return false;
     }
 }

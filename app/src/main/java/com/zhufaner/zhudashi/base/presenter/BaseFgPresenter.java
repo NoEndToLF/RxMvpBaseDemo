@@ -1,7 +1,9 @@
 package com.zhufaner.zhudashi.base.presenter;
 
 import com.android.cloud.http.httprequestlife.LifeCycleListener;
+import com.android.cloud.libraryinit.BaseLibraryManager;
 import com.trello.rxlifecycle2.LifecycleTransformer;
+import com.zhufaner.zhudashi.api.NetApiService;
 import com.zhufaner.zhudashi.base.view.BaseFragment;
 
 import java.lang.ref.Reference;
@@ -12,6 +14,7 @@ import java.lang.ref.WeakReference;
  */
 
 public class BaseFgPresenter<V,T> implements LifeCycleListener {
+    protected NetApiService netApiService;
     protected Reference<V> mViewRef;
     protected V mView;
     protected Reference<T> mFragmentRef;
@@ -22,6 +25,8 @@ public class BaseFgPresenter<V,T> implements LifeCycleListener {
 
     protected LifecycleTransformer lifecycleTransformer;
     public BaseFgPresenter(V view, T Fragment) {
+        BaseLibraryManager<NetApiService> baseLibraryInitHelp=BaseLibraryManager.getInstance();
+        netApiService=baseLibraryInitHelp.getNetService();
         attachView(view);
         attachFragment(Fragment);
         setListener(Fragment);

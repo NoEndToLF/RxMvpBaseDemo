@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.zhufaner.zhudashi.module.main.MainActivity">
+    <include layout="@layout/toolbar_zds"></include>
     <TextView
         android:layout_width="@dimen/dp_180"
         android:layout_height="@dimen/dp_90"

@@ -1,6 +1,7 @@
 package com.zhufaner.zhudashi.module.main.home.view;
 
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,19 +16,33 @@ import com.zhufaner.zhudashi.module.main.MainActivity;
 
 public class HomeFragment extends BaseFragment{
     @Override
-    protected View setFragmentView(LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup) {
-        View view=layoutInflater.inflate(R.layout.fragment_home_zds,viewGroup,false);
-        ((MainActivity)getParentActivity()).setReadPoint(0,5);
-        return view;
+    protected boolean isHasToolbar() {
+        return true;
+    }
+
+    @Override
+    protected void showToolbar() {
+        tv_toolbar_title.setText("首页");
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
     @Override
     protected void loadData() {
-
+        ((MainActivity)getParentActivity()).setReadPoint(0,5);
     }
 
     @Override
-    protected void fgVisible() {
-
+    protected void hasLoadVisible() {
+        Log.v("loadDate","heihei");
     }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_home_zds;
+    }
+
 }

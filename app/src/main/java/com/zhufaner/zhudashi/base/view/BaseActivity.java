@@ -3,7 +3,6 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -12,27 +11,25 @@ import android.widget.TextView;
 import com.android.cloud.http.httprequestlife.LifeCycleListener;
 import com.android.dialoglibrary.UsefulDialogManager;
 import com.android.listpoplibrary.ListPopWindowManager;
+import com.githang.statusbar.StatusBarCompat;
 import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.wstatic.toolandstatusbarlibrary.ToolAndStatusBarMagager;
 import com.wxystatic.loadretrylibrary.LoadReTryRefreshManager;
 import com.zhufaner.zhudashi.R;
 import com.zhufaner.zhudashi.util.toast.ToastType;
 import com.zhufaner.zhudashi.util.toast.ToastUtil;
 
-import org.w3c.dom.Text;
-
 import butterknife.ButterKnife;
 
 public abstract  class BaseActivity extends RxAppCompatActivity {
     public LifeCycleListener mListener;
-    private Toolbar toolbar;
-    private LinearLayout linear_toolbar_back;
-    private ImageView iv_toolbar_back;
-    private TextView tv_toolbar_title;
-    private RelativeLayout relative_toolbar_right;
-    private ImageView iv_toolbar_right;
-    private TextView tv_toolbar_right;
+    protected Toolbar toolbar;
+    protected LinearLayout linear_toolbar_back;
+    protected ImageView iv_toolbar_back;
+    protected TextView tv_toolbar_title;
+    protected RelativeLayout relative_toolbar_right;
+    protected ImageView iv_toolbar_right;
+    protected TextView tv_toolbar_right;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +38,7 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         //横竖屏切换禁止
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //沉浸式状态栏
-        ToolAndStatusBarMagager.getInstance().setStatusBarColor(this, R.color.toolbar);
+        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.toolbar));
         //初始化Toolbar
         if (isHasToolbar()){
         initToolbar();
@@ -63,12 +60,13 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
                 finish();
             }
         });
-//        linear_toolbar_back.setVisibility(View.INVISIBLE);
-//        relative_toolbar_right.setVisibility(View.INVISIBLE);
+        linear_toolbar_back.setVisibility(View.INVISIBLE);
+        relative_toolbar_right.setVisibility(View.INVISIBLE);
     }
 
     protected abstract int getLayoutId();
     protected abstract boolean isHasToolbar();
+
     /**
      * 回调函数
      */

@@ -1,8 +1,7 @@
-package com.zhufaner.zhudashi.module.main.zany_main;
+package com.zhufaner.zhudashi.widget;
 
 import android.content.Context;
 import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.TextView;
 
 import com.zhufaner.zhudashi.R;
 
-import me.majiajie.pagerbottomtabstrip.internal.RoundMessageView;
 import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
 
 /**

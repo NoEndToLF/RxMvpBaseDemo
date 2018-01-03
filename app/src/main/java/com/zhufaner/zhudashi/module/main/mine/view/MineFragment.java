@@ -13,10 +13,22 @@ import com.zhufaner.zhudashi.base.view.BaseFragment;
  */
 
 public class MineFragment extends BaseFragment{
+
+
     @Override
-    protected View setFragmentView(LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup) {
-        View view=layoutInflater.inflate(R.layout.fragment_mine_zds,viewGroup,false);
-        return view;
+    protected boolean isHasToolbar() {
+        return true;
+    }
+
+    @Override
+    protected void showToolbar() {
+        tv_toolbar_title.setText("我的");
+
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
     @Override
@@ -25,7 +37,14 @@ public class MineFragment extends BaseFragment{
     }
 
     @Override
-    protected void fgVisible() {
+    protected void hasLoadVisible() {
 
     }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_mine_zds;
+    }
+
+
 }

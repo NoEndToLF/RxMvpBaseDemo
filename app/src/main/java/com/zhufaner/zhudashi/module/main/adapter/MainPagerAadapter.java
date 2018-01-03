@@ -1,4 +1,4 @@
-package com.zhufaner.zhudashi.module.main.zany_main;
+package com.zhufaner.zhudashi.module.main.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

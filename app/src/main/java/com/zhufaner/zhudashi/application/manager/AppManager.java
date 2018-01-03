@@ -82,7 +82,7 @@ public class AppManager implements AppManagerImpl{
         //1,设置context
         baseLibraryInitHelp.setContext(context);
         //2,设置baseurl和证书
-        baseLibraryInitHelp.setBaseUrl("","");
+        baseLibraryInitHelp.setBaseUrl("www.baidu.com","www.baidu.com");
 //        baseLibraryInitHelp.setHttpsCer(false);/**是否有证书,默认为false*/
         baseLibraryInitHelp.setHttpsCer(true);
         /**测试站和生产站证书，放在assets目录下*/
@@ -92,8 +92,8 @@ public class AppManager implements AppManagerImpl{
         //4,设置测试站还是生产站(可随时切换)
         baseLibraryInitHelp.setDebug(true);
         //其他设置
-        baseLibraryInitHelp.setUpLoadImgService();/**图片上传*/
-        baseLibraryInitHelp.setApiService(NetApiService.class);/**初始化Api*/
+//        baseLibraryInitHelp.setUpLoadImgService();/**图片上传*/
+//        baseLibraryInitHelp.setApiService(NetApiService.class);/**初始化Api*/
     }
 
     @Override
